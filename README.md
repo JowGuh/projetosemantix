@@ -63,12 +63,9 @@ Todas as visualizações foram pensadas para facilitar insights visuais e possib
 ## 🚀 Deploy
 
 O projeto foi publicado utilizando **Streamlit Cloud** e está disponível em:  
-👉 [**Link para o App**]([https://seu-link-aqui.streamlit.app](https://jowguhprojetosemantix.streamlit.app/))
+👉 [**Link para o App**](https://jowguhprojetosemantix.streamlit.app/)
 
-O código-fonte completo pode ser acessado neste repositório:  
-👉 [**GitHub - projeto-semantix-nfp**](https://github.com/seu-usuario/seu-repo)
 
----
 
 ## 💻 Requisitos
 
