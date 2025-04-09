@@ -172,25 +172,26 @@ st.header("Correlações entre Variáveis")
 num_df = df[['Valor NF', 'Créditos', 'Retorno', 'Dias_Registro']].corr()
 
 
-if num_df.isna().sum().sum() > 0:
-    st.warning("Matriz de correlação contém valores nulos.")
-
-
 fig = go.Figure(data=go.Heatmap(
     z=num_df.values,
     x=num_df.columns,
     y=num_df.columns,
     colorscale='Blues',
-    hoverongaps=False,
-    text=num_df.values.round(2),
-    hovertemplate='Correlação: %{text}<extra></extra>'
+    hoverongaps=False
 ))
 
-fig.update_layout(
-    title='Mapa de Calor de Correlação',
-    xaxis_nticks=36
-)
 
+for i in range(len(num_df)):
+    for j in range(len(num_df.columns)):
+        fig.add_annotation(dict(
+            x=num_df.columns[j],
+            y=num_df.columns[i],
+            text=str(round(num_df.values[i][j], 2)),
+            showarrow=False,
+            font=dict(color='black')
+        ))
+
+fig.update_layout(title='Mapa de Calor de Correlação')
 st.plotly_chart(fig, use_container_width=True)
 
 
